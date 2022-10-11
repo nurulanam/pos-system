@@ -11700,3 +11700,18 @@ body {
   font-size: 0.75rem;
   border-radius: 0.25rem !important;
 }
+
+
+
+
+
+
+
+
+/*custom css*/
+
+.modal.right .modal-dialog{
+    right: 0;
+    top: 0;
+    margin-right: 0;
+}

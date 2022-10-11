@@ -11,11 +11,15 @@
         </div>
         <div class="row mt-3">
             <div class="col-12">
+                @if($message = Session::get('success'))
+                    <div class="alert alert-success">{{$message}}</div>
+                @endif
                 <table id="datatablesSimple">
                     <thead>
                     <tr>
                         <th>Sl</th>
                         <th>Name</th>
+                        <th>Avater</th>
                         <th>Details</th>
                         <th>Status</th>
                         <th>Action</th>
@@ -25,6 +29,7 @@
                     <tr>
                         <th>Sl</th>
                         <th>Name</th>
+                        <th>Avater</th>
                         <th>Details</th>
                         <th>Status</th>
                         <th>Action</th>
@@ -35,6 +40,9 @@
                     <tr>
                         <td>{{$key+1}}</td>
                         <td>{{$category->category_name}}</td>
+                        <td class="text-center">
+                            <img src="{{asset('backend/assets/img/category/'.$category->category_avater)}}" class="img-fluid img-thumbnail" width="50">
+                        </td>
                         <td>{{$category->category_description}}</td>
                         <td></td>
                         <td>
@@ -47,7 +55,7 @@
 {{--                                   data-bs-target="#editModal">--}}
 {{--                                    <i class="fas fa-edit mx-2 text-primary edit_btn"></i>--}}
 {{--                                </button>--}}
-                                <a href="{{url('/dashboard/category/edit/'.$category->id)}}">
+                                <a href="{{url('/dashboard/category/'.$category->category_slug.'/edit')}}">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <a href="#"><i class="fas fa-trash-alt mx-2 text-danger"></i></a>

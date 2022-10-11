@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +37,9 @@ Route::controller(DashboardController::class)->prefix('/dashboard')->middleware(
 
     //Product
     Route::resource('/product', 'App\Http\Controllers\ProductController'); //product
+
+    //Orders
+    Route::resource('/order', 'App\Http\Controllers\OrderController'); //Order
 
     //Category Routes
     Route::controller(CategoryController::class)->prefix('/category')->group(function (){
